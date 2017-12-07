@@ -17,7 +17,8 @@
       <div class="row">
         <div class="col">
           <% posts.forEach( (post) => { %>
-            <a href="/post/<%= post.id %>"> <h3> <%= post.title %> </h1> </a>
+            <h3> <%= post.title %> </h3>
+            <p> <%= post.body %> </p>
           <% }) %>
         </div>
       </div>

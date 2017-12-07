@@ -16,6 +16,7 @@ const cookie = require('./routes/cookie');
 const logout = require('./routes/logout');
 const profile = require('./routes/profile');
 const createpost = require('./routes/createpost');
+const post = require('./routes/post');
 
 const app = express();
 
@@ -45,6 +46,7 @@ app.use('/cookie', cookie);
 app.use('/logout', logout);
 app.use('/profile', profile);
 app.use('/createpost', createpost);
+app.use('/post', post);
 
 /* A simple database creation route
 app.get('/createdb', (req, res) => {
