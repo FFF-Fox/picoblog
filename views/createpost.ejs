@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+  <%- include('templates/head') %>
+
+  <body>
+    <div class="container">
+      <%- include('templates/header') %>
+
+      <div class="row text-center">
+        <div class="col">
+          <h1><%= title %></h1>
+          <hr />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <textarea id="postTitle" rows="1" cols="25" maxlength="25"> Title </textarea>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <textarea id="postBody" rows="10" cols="25" maxlength="255">
+            This is a sample text.
+          </textarea>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <button id="submitBtn" class="btn btn-primary"> Post </button>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>

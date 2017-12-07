@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+  <%- include('templates/head') %>
+
+  <body>
+    <div class="container">
+
+      <div class="row text-center">
+        <div class="col">
+          <% include templates/header %>
+          <h1><%= title %></h1>
+          <hr />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <% posts.forEach( (item) => { %>
+            <h3> <%= item.title %> </h1>
+            <p> <%= item.body %> </p>
+          <% }) %>
+        </div>
+      </div>
+      
+    </div>
+  </body>
+</html>

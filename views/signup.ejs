@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <%- include('templates/head') %>
+
+  <body>
+    <div class="container">
+      <%- include('templates/header') %>
+
+      <div class="row text-center">
+        <div class="col">
+          <h1><%= title %></h1>
+          <hr />
+
+          <p> Create a new account. It's easy! </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <form action="/signup" method="POST">
+            <div class="form-group">
+              <label for="signupUsername"> Username </label>
+              <input type="text" name="username" id="signupUsername" placeholder="Enter username" class="form-control">
+            </div>
+            <% if (errors.username !== undefined) { %>
+              <div class="alert alert-danger" role="alert">
+                <% errors.username.forEach( (error) => { %>
+                  <%= error %> <br>
+                <% }); %>
+              </div>
+            <% } %>
+
+            <div class="form-group">
+              <label for="signupPassword"> Password </label>
+              <input type="password" name="password" id="signupPassword" placeholder="Password" class="form-control">
+              <small id="passwordHelpBlock" class="form-text text-muted">
+                Password specific instructions.
+              </small>
+            </div>
+            <% if (errors.password !== undefined) { %>
+              <div class="alert alert-danger" role="alert">
+                <% errors.password.forEach( (error) => { %>
+                  <%= error %> <br>
+                <% }); %>
+              </div>
+            <% } %>
+
+            <button type="submit" class="btn btn-primary"> Sign Up </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

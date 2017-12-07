@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+  <%- include('templates/head') %>
+
+  <body>
+    <div class="container">
+      <% include templates/header %>
+
+      <div class="row text-center">
+        <div class="col">
+          <h1><%= title %></h1>
+          <hr />
+
+          <p> You are not currently logged in. </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <form action="/login" method="POST">
+            <div class="form-group">
+              <label for="signupUsername"> Username </label>
+              <input type="text" name="username" id="signupUsername" placeholder="Enter username" class="form-control">
+            </div>
+            <% if (errors.username !== undefined && errors.username.length > 0) { %>
+              <div class="alert alert-danger" role="alert">
+                <% errors.username.forEach( (error) => { %>
+                  <%= error %> <br>
+                <% }); %>
+              </div>
+            <% } %>
+
+            <div class="form-group">
+              <label for="signupPassword"> Password </label>
+              <input type="password" name="password" id="signupPassword" placeholder="Password" class="form-control">
+              <small id="passwordHelpBlock" class="form-text text-muted">
+                Password specific instructions.
+              </small>
+            </div>
+            <% if (errors.password !== undefined && errors.password.length > 0) { %>
+              <div class="alert alert-danger" role="alert">
+                <% errors.password.forEach( (error) => { %>
+                  <%= error %> <br>
+                <% }); %>
+              </div>
+            <% } %>
+
+            <div class="form-inline">
+              <button type="submit" class="btn btn-primary"> Login </button>
+
+              <div class="form-check">
+                <label class="form-check-label">
+                  Stay Logged In
+                  <input type="checkbox" name="checkbox" class="form-check-input">
+                </label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>
